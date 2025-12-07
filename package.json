@@ -1,0 +1,52 @@
+{
+  "name": "password-dict-generator",
+  "version": "1.0.0",
+  "main": "main.js",
+  "description": "密码本生成器",
+  "author": "https://blog.cocodemo.uno",
+  "scripts": {
+    "start": "electron .",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux"
+  },
+  "build": {
+    "appId": "com.yourcompany.password-generator",
+    "productName": "密码本生成器",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "main.js",
+      "preload.js"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "build/icon.ico"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "icon": "build/icon.icns"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "icon": "build/icon.png"
+    }
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.10.2",
+    "electron": "^28.3.3",
+    "electron-builder": "^24.13.3"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "type": "commonjs"
+}
