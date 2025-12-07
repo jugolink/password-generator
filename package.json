@@ -5,10 +5,12 @@
   "description": "密码本生成器",
   "author": "https://blog.cocodemo.uno",
   "scripts": {
-    "start": "electron .",
+    "start": "electron-forge start",
     "build:win": "electron-builder --win",
     "build:mac": "electron-builder --mac",
-    "build:linux": "electron-builder --linux"
+    "build:linux": "electron-builder --linux",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "build": {
     "appId": "com.yourcompany.password-generator",
@@ -35,18 +37,26 @@
     },
     "linux": {
       "target": [
-        "AppImage",
-        "deb"
+        "AppImage"
       ],
       "icon": "build/icon.png"
     }
   },
   "devDependencies": {
     "@electron-forge/cli": "^7.10.2",
-    "electron": "^28.3.3",
-    "electron-builder": "^24.13.3"
+    "@electron-forge/maker-deb": "^7.10.2",
+    "@electron-forge/maker-rpm": "^7.10.2",
+    "@electron-forge/maker-squirrel": "^7.10.2",
+    "@electron-forge/maker-zip": "^7.10.2",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.10.2",
+    "@electron-forge/plugin-fuses": "^7.10.2",
+    "@electron/fuses": "^1.8.0",
+    "electron": "^28.3.3"
   },
   "keywords": [],
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1"
+  }
 }
