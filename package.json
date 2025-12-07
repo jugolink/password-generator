@@ -51,7 +51,8 @@
     "@electron-forge/plugin-auto-unpack-natives": "^7.10.2",
     "@electron-forge/plugin-fuses": "^7.10.2",
     "@electron/fuses": "^1.8.0",
-    "electron": "^28.3.3"
+    "electron": "^28.3.3",
+    "electron-builder": "^26.0.12"
   },
   "keywords": [],
   "license": "ISC",

@@ -1,5 +1,9 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
+// 启动时禁用 GTK 警告
+process.env.G_MESSAGES_DEBUG = '';
+process.env.GTK_MODULES = '';
+
 
 function createWindow() {
   const win = new BrowserWindow({
